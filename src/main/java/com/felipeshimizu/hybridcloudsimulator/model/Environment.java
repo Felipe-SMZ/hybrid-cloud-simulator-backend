@@ -1,6 +1,6 @@
 package com.felipeshimizu.hybridcloudsimulator.model;
 
-import com.felipeshimizu.hybridcloudsimulator.model.enums.EnvoronmentType;
+import com.felipeshimizu.hybridcloudsimulator.model.enums.EnvironmentType;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,7 +16,7 @@ public class Environment {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private EnvoronmentType type;
+    private EnvironmentType type;
 
     @Column(nullable = false, length = 100)
     private String location;
@@ -27,7 +27,7 @@ public class Environment {
     public Environment() {
     }
 
-    public Environment(String name, EnvoronmentType type, String location) {
+    public Environment(String name, EnvironmentType type, String location) {
         this.name = name;
         this.type = type;
         this.location = location;
@@ -41,7 +41,7 @@ public class Environment {
         return name;
     }
 
-    public EnvoronmentType getType() {
+    public EnvironmentType getType() {
         return type;
     }
 
