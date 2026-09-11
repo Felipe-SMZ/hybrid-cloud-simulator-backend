@@ -22,7 +22,7 @@ public class MetricSnapshot {
     private Instant collectedAt;
 
     @Column(nullable = false)
-    private int latenncyMs;
+    private int latencyMs;
 
     @Column(nullable = false)
     private BigDecimal errorRatePercent;
@@ -37,10 +37,10 @@ public class MetricSnapshot {
     protected MetricSnapshot() {
     }
 
-    public MetricSnapshot(Environment environment, Instant collectedAt, int latenncyMs, BigDecimal errorRatePercent, BigDecimal costAmount, CurrencyType currency) {
+    public MetricSnapshot(Environment environment, Instant collectedAt, int latencyMs, BigDecimal errorRatePercent, BigDecimal costAmount, CurrencyType currency) {
         this.environment = environment;
         this.collectedAt = collectedAt;
-        this.latenncyMs = latenncyMs;
+        this.latencyMs = latencyMs;
         this.errorRatePercent = errorRatePercent;
         this.costAmount = costAmount;
         this.currency = currency;
@@ -58,8 +58,8 @@ public class MetricSnapshot {
         return collectedAt;
     }
 
-    public int getLatenncyMs() {
-        return latenncyMs;
+    public int getLatencyMs() {
+        return latencyMs;
     }
 
     public BigDecimal getErrorRatePercent() {
